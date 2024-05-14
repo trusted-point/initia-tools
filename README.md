@@ -149,9 +149,9 @@ source $HOME/.bash_profile
 ```bash
 cd $HOME
 initiad init $MONIKER --chain-id $CHAIN_ID
-initiad config set chain-id $CHAIN_ID
-initiad config set node tcp://localhost:$RPC_PORT
-initiad config set keyring-backend os # You can set it to "test" so you will not be asked for a password
+initiad config set client chain-id $CHAIN_ID
+initiad config set client node tcp://localhost:$RPC_PORT
+initiad config set client keyring-backend os # You can set it to "test" so you will not be asked for a password
 ```
 ### 6. Download genesis.json
 ```bash
