@@ -255,7 +255,7 @@ initiad q bank balances $(initiad keys show $WALLET_NAME -a)
 ```
 ### 17. Create a validator
 ```bash
-initiad tx staking create-validator \
+initiad tx mstaking create-validator \
   --amount=1000000uinit \
   --pubkey=$(initiad tendermint show-validator) \
   --moniker=$MONIKER \
@@ -263,12 +263,11 @@ initiad tx staking create-validator \
   --commission-rate=0.05 \
   --commission-max-rate=0.10 \
   --commission-max-change-rate=0.01 \
-  --min-self-delegation=1 \
   --from=$WALLET_NAME \
   --identity="" \
   --website="" \
   --details="Initia to the moon!" \
-  --gas=200000 --fees=5000uinit \
+  --gas=2000000 --fees=300000uinit \
   -y
 ```
 Do not forget to save `priv_validator_key.json` file located in $HOME/.initia/config/
@@ -432,11 +431,11 @@ initiad q slashing signing-info $(initiad tendermint show-validator)
 ```
 ### Unjail your validator 
 ```bash
-initiad tx slashing unjail --from $WALLET_NAME --gas=200000 --fees=5000uinit -y
+initiad tx slashing unjail --from $WALLET_NAME --gas=2000000 --fees=300000uinit -y
 ```
 ### Delegate tokens to your validator 
 ```bash 
-initiad tx staking delegate $(initiad keys show $WALLET_NAME --bech val -a)  <AMOUNT>uinit --from $WALLET_NAME --gas=200000 --fees=5000uinit -y
+initiad tx staking delegate $(initiad keys show $WALLET_NAME --bech val -a)  <AMOUNT>uinit --from $WALLET_NAME --gas=2000000 --fees=300000uinit -y
 ```
 ### Get your p2p peer address
 ```bash
@@ -444,11 +443,11 @@ initiad status | jq -r '"\(.NodeInfo.id)@\(.NodeInfo.listen_addr)"'
 ```
 ### Edit your validator
 ```bash 
-initiad tx staking edit-validator --website="<WEBSITE>" --details="<DESCRIPTION>" --moniker="<NEW_MONIKER>" --from=$WALLET_NAME --gas=200000 --fees=5000uinit -y
+initiad tx staking edit-validator --website="<WEBSITE>" --details="<DESCRIPTION>" --moniker="<NEW_MONIKER>" --from=$WALLET_NAME --gas=2000000 --fees=300000uinit -y
 ```
 ### Send tokens between wallets 
 ```bash
-initiad tx bank send $WALLET_NAME <TO_WALLET> <AMOUNT>uinit --gas=200000 --fees=5000uinit -y
+initiad tx bank send $WALLET_NAME <TO_WALLET> <AMOUNT>uinit --gas=2000000 --fees=300000uinit -y
 ```
 ### Query your wallet balance 
 ```bash
