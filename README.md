@@ -423,7 +423,7 @@ initiad status | jq
 ```
 ### Query your validator
 ```bash
-initiad q staking validator $(initiad keys show $WALLET_NAME --bech val -a) 
+initiad q mstaking validator $(initiad keys show $WALLET_NAME --bech val -a) 
 ```
 ### Query missed blocks counter & jail details of your validator
 ```bash
