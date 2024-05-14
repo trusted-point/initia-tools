@@ -435,7 +435,7 @@ initiad tx slashing unjail --from $WALLET_NAME --gas=2000000 --fees=300000uinit 
 ```
 ### Delegate tokens to your validator 
 ```bash 
-initiad tx staking delegate $(initiad keys show $WALLET_NAME --bech val -a)  <AMOUNT>uinit --from $WALLET_NAME --gas=2000000 --fees=300000uinit -y
+initiad tx mstaking delegate $(initiad keys show $WALLET_NAME --bech val -a)  <AMOUNT>uinit --from $WALLET_NAME --gas=2000000 --fees=300000uinit -y
 ```
 ### Get your p2p peer address
 ```bash
@@ -443,7 +443,7 @@ initiad status | jq -r '"\(.NodeInfo.id)@\(.NodeInfo.listen_addr)"'
 ```
 ### Edit your validator
 ```bash 
-initiad tx staking edit-validator --website="<WEBSITE>" --details="<DESCRIPTION>" --moniker="<NEW_MONIKER>" --from=$WALLET_NAME --gas=2000000 --fees=300000uinit -y
+initiad tx mstaking edit-validator --website="<WEBSITE>" --details="<DESCRIPTION>" --moniker="<NEW_MONIKER>" --from=$WALLET_NAME --gas=2000000 --fees=300000uinit -y
 ```
 ### Send tokens between wallets 
 ```bash
@@ -461,14 +461,14 @@ htop
 ```
 ### Query active validators
 ```bash
-initiad q staking validators -o json --limit=1000 \
+initiad q mstaking validators -o json --limit=1000 \
 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' \
 | jq -r '.tokens + " - " + .description.moniker' \
 | sort -gr | nl
 ```
 ### Query inactive validators
 ```bash
-initiad q staking validators -o json --limit=1000 \
+initiad q mstaking validators -o json --limit=1000 \
 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' \
 | jq -r '.tokens + " - " + .description.moniker' \
 | sort -gr | nl
@@ -505,7 +505,7 @@ chmod +x grpcurl
 ```
 ### Example REST API query
 ```bash
-curl localhost:$API_PORT/cosmos/staking/v1beta1/validators
+curl localhost:$API_PORT/cosmos/mstaking/v1beta1/validators
 ### MAKE SURE API is enabled in app.toml
 # grep -A 3 "\[api\]" $HOME/.initia/config/app.toml
 ```
