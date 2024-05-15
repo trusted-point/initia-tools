@@ -384,7 +384,7 @@ Peers are being updated every 5 minutes
 
 ### 1. Download latest snapshot from our endpoint
 ```bash
-wget https://rpc-initia-testnet.trusted-point.com/latest_snapshot.tar.lz4
+wget https://rpc-initia-testnet.trusted-point.com/latest_snapshot.tar.lz4 -O latest_snapshot.tar.lz4
 ```
 ### 2. Stop the node
 ```bash
