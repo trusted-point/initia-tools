@@ -55,7 +55,7 @@
   - [2. Stop the node](#2-stop-the-node)
   - [3. Backup priv\_validator\_state.json](#3-backup-priv_validator_statejson)
   - [4. Reset DB](#4-reset-db)
-  - [5. Extract files fromt the arvhive](#5-extract-files-fromt-the-arvhive)
+  - [5. Extract files from the archive](#5-extract-files-fromt-the-arvhive)
   - [6. Move priv\_validator\_state.json back](#6-move-priv_validator_statejson-back)
   - [7. Restart the node](#7-restart-the-node)
   - [8. Check the synchronization status](#8-check-the-synchronization-status)
@@ -398,7 +398,7 @@ cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_sta
 ```bash
 initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book
 ```
-### 5. Extract files fromt the arvhive 
+### 5. Extract files from the archive 
 ```bash
 lz4 -d -c ./latest_snapshot.tar.lz4 | tar -xf - -C $HOME/.initia
 ```
