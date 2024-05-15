@@ -463,14 +463,14 @@ htop
 ```bash
 initiad q mstaking validators -o json --limit=1000 \
 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' \
-| jq -r '.tokens + " - " + .description.moniker' \
+| jq -r '.voting_power + " - " + .description.moniker' \
 | sort -gr | nl
 ```
 ### Query inactive validators
 ```bash
 initiad q mstaking validators -o json --limit=1000 \
 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' \
-| jq -r '.tokens + " - " + .description.moniker' \
+| jq -r '.voting_power + " - " + .description.moniker' \
 | sort -gr | nl
 ```
 ### Check logs of the node
