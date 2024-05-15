@@ -248,7 +248,7 @@ initiad keys add $WALLET_NAME
 ### 16. Check wallet balance
 Make sure your node is fully synced unless it won't work.
 ```bash
-initiad status | jq .SyncInfo.catching_up
+initiad status | jq -r .sync_info
 ```
 ```bash
 initiad q bank balances $(initiad keys show $WALLET_NAME -a) 
@@ -334,7 +334,7 @@ After some time you should see the following logs. It make take 5 minutes for th
 ```
 ### 6. Check the synchronization status
 ```bash
-initiad status | jq .SyncInfo
+initiad status | jq -r .sync_info
 ```
 ### 7. Disable state sync
 ```bash
@@ -353,7 +353,7 @@ sudo systemctl restart initiad && sudo journalctl -u initiad -f -o cat
 ```
 ### 3. Check the synchronization status
 ```bash
-initiad status | jq .SyncInfo
+initiad status | jq -r .sync_info
 ```
 The file is being updated every 5 minutes
 
@@ -376,7 +376,7 @@ sudo systemctl restart initiad && sudo journalctl -u initiad -f -o cat
 ```
 ### 3. Check the synchronization status
 ```bash
-initiad status | jq .SyncInfo
+initiad status | jq -r .sync_info
 ```
 Peers are being updated every 5 minutes
 
@@ -412,7 +412,7 @@ sudo systemctl restart initiad && sudo journalctl -u initiad -f -o cat
 ```
 ### 8. Check the synchronization status
 ```bash
-initiad status | jq .SyncInfo
+initiad status | jq -r .sync_info
 ```
 Snapshot is being updated every 3 hours
 
