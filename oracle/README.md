@@ -63,6 +63,7 @@ To operate the oracle sidecar, it is essential to have valid configuration files
     - [Monitor server load](#monitor-server-load)
     - [Check logs of the oracle](#check-logs-of-the-oracle)
     - [Restart the oracle](#restart-the-oracle)
+    - [Upgrade the oracle](#upgrade-the-oracle)
     - [Stop the oracle](#stop-the-oracle)
     - [Delete the oracle from the server](#delete-the-oracle-from-the-server)
 
@@ -315,6 +316,21 @@ sudo journalctl -u initia-oracle -f -o cat
 ### Restart the oracle
 ```bash
 sudo systemctl restart initia-oracle
+```
+
+### Upgrade the oracle
+```bash
+ORACLE_VERSION="v0.4.3"
+
+cd $HOME && \
+git clone https://github.com/skip-mev/slinky.git && \
+cd slinky && \
+git checkout $ORACLE_VERSION && \
+make build && \
+mv build/slinky /usr/local/bin/
+
+# Restart the oracle
+sudo systemctl restart initia-oracle && sudo journalctl -u initia-oracle -f -o cat
 ```
 
 ### Stop the oracle
