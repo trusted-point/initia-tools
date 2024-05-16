@@ -384,7 +384,9 @@ Peers are being updated every 5 minutes
 
 ### 1. Download latest snapshot from our endpoint
 ```bash
-wget https://rpc-initia-testnet.trusted-point.com/latest_snapshot.tar.lz4 -O latest_snapshot.tar.lz4
+wget https://snapshots.kjnodes.com/initia-testnet/snapshot_latest.tar.lz4 -O latest_snapshot.tar.lz4
+
+# https://rpc-initia-testnet.trusted-point.com/latest_snapshot.tar.lz4 is under maintenance. Please use kjnode's one
 ```
 ### 2. Stop the node
 ```bash
