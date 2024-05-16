@@ -1,4 +1,4 @@
-[<img src='../assets\Initia-Banner.png' alt='banner' width= '99.9%'>]()
+[<img src='../assets\Initia-Oracle-Banner.png' alt='banner' width= '99.9%'>]()
 
 # Overview
 **[Slinky](https://github.com/skip-mev/slinky/)** is a general-purpose price oracle leveraging ABCI++.
