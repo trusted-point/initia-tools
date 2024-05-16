@@ -16,36 +16,12 @@ The Slinky Oracle consists of two main elements:
     - Dedicated to polling price information from various providers.
     - Delivers this data to the on-chain component.
 
-## Config
-
-To operate the oracle sidecar, it is essential to have valid configuration files for both the oracle component and the market component. The oracle executable recognizes flags that specify each configuration file. Below are recommended default settings suitable for the existing Initia Devnet environment.
-
-1. **Oracle Component**
-    - Determines how often to poll price providers.
-    - Manages multiplexing behavior of websockets and more.
-    - This configuration has been tested by Skip and is safe to use.
-    - The recommended oracle component configuration can be found in `config/core/oracle.json` within the Slinky repo.
-
-2. **Market Component**
-    - Determines which markets the sidecar should fetch prices for.
-    - The desired markets will be stored on-chain and pulled by the sidecar.
-    - To properly configure the sidecar, you must point the sidecar to the GRPC port on a node (typically port 9090). This can be done by:
-        - Adding the `--market-map-endpoint` flag when starting the sidecar.
-        - Modifying the `oracle.json` component as shown below:
-        
-        ```json
-        {
-          "market_map_endpoint": "http://localhost:9090"
-        }
-        ```
- 
-
 ### Navigation Menu
 - [Overview](#overview)
   - [Components](#components)
-  - [Config](#config)
     - [Navigation Menu](#navigation-menu)
   - [Hardware requirements](#hardware-requirements)
+  - [Config](#config)
   - [Installation guide](#installation-guide)
     - [1. Install required packages](#1-install-required-packages)
     - [2. Install Go](#2-install-go)
@@ -74,6 +50,29 @@ To operate the oracle sidecar, it is essential to have valid configuration files
 - Bandwidth: 1 Gbps
 - Linux amd64 arm64 (Ubuntu LTS release)
 ```
+
+## Config
+
+To operate the oracle sidecar, it is essential to have valid configuration files for both the oracle component and the market component. The oracle executable recognizes flags that specify each configuration file. Below are recommended default settings suitable for the existing Initia Devnet environment.
+
+1. **Oracle Component**
+    - Determines how often to poll price providers.
+    - Manages multiplexing behavior of websockets and more.
+    - This configuration has been tested by Skip and is safe to use.
+    - The recommended oracle component configuration can be found in `config/core/oracle.json` within the Slinky repo.
+
+2. **Market Component**
+    - Determines which markets the sidecar should fetch prices for.
+    - The desired markets will be stored on-chain and pulled by the sidecar.
+    - To properly configure the sidecar, you must point the sidecar to the GRPC port on a node (typically port 9090). This can be done by:
+        - Adding the `--market-map-endpoint` flag when starting the sidecar.
+        - Modifying the `oracle.json` component as shown below:
+        
+        ```json
+        {
+          "market_map_endpoint": "http://localhost:9090"
+        }
+        ```
 
 ## Installation guide
 
