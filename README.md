@@ -205,9 +205,9 @@ sed -i \
 ```bash
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.15uinit,0.01uusdc\"/" $HOME/.initia/config/app.toml
 ```
-### 11. Enable indexer (Optional)
+### 11. Disable indexer
 ```bash
-sed -i "s/^indexer *=.*/indexer = \"kv\"/" $HOME/.initia/config/config.toml
+sed -i "s/^indexer *=.*/indexer = \"null\"/" $HOME/.initia/config/config.toml
 ```
 ### 12. Create a service file
 ```bash
